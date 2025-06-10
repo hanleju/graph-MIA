@@ -1,0 +1,5 @@
+# pyc 파일 제외
+*.pyc
+
+# pycache 폴더 제외
+*/__pycache__
