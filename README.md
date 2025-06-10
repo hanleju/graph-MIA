@@ -2,7 +2,7 @@
 
 ## 0. Purpose
 
-**social network 기반 multi-label classification 모델**에서의 **privacy 취약성**을 분석을 목표로 함함. 
+**social network 기반 multi-label classification 모델**에서의 **privacy 취약성**을 분석을 목표로 함. 
 특히, **membership inference attack(MIA)**을 통해 모델이 특정 데이터를 학습에 사용했는지 여부를 추론할 수 있는지 평가하고,  
 **노이즈 삽입(Confidence-Adaptive Noise)**와 같은 방어 기법이 MIA에 미치는 영향을 실험적으로 검증함.
 
@@ -50,7 +50,7 @@
 ## 3. Confidence-Adaptive Noise
 
 Membership inference 공격은 **모델의 예측 확신(confidence)**에 크게 의존함.  
-이를 완화하기 위해, **예측 확신이 높을수록 적은 노이즈**, **낮을수록 큰 노이즈**를 출력에 추가하는 방어 기법을 적용함함.
+이를 완화하기 위해, **예측 확신이 높을수록 적은 노이즈**, **낮을수록 큰 노이즈**를 출력에 추가하는 방어 기법을 적용함.
 
 ### Implementation: `confidence_adaptive_noise`
 
