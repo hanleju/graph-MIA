@@ -2,9 +2,9 @@
 
 ## 0. Purpose
 
-본 프로젝트의 목적은 **social network 기반 multi-label classification 모델**에서의 **privacy 취약성**을 분석하는 것입니다.  
+**social network 기반 multi-label classification 모델**에서의 **privacy 취약성**을 분석을 목표로 함함. 
 특히, **membership inference attack(MIA)**을 통해 모델이 특정 데이터를 학습에 사용했는지 여부를 추론할 수 있는지 평가하고,  
-**노이즈 삽입(Confidence-Adaptive Noise)**와 같은 방어 기법이 MIA에 미치는 영향을 실험적으로 검증합니다.
+**노이즈 삽입(Confidence-Adaptive Noise)**와 같은 방어 기법이 MIA에 미치는 영향을 실험적으로 검증함.
 
 ---
 
@@ -35,11 +35,11 @@
 
 - **공격 방식**:  
   1. **Shadow Model** 방식 사용  
-      - 타겟 모델과 동일 구조의 shadow 모델 여러 개를 학습  
+      - 타겟 모델과 동일 구조의 shadow 모델을 학습  
       - shadow train, shadow test 구분  
-  2. 각 샘플의 **출력 및 예측 정보**(confidence, entropy 등)로 attack feature 생성  
-  3. **공격 모델(Attack Model)**: 로지스틱 회귀 (이진 분류기)  
-      - 입력: 샘플의 prediction feature  
+  2. 각 샘플의 **출력 및 예측 정보**(confidence)로 attack feature 생성  
+  3. **공격 모델(Attack Model)**: 로지스틱 회귀 (이진 분류기)
+      - 입력: 샘플의 prediction feature
       - 출력: IN/OUT 판별
 
 - **평가지표**:  
@@ -47,10 +47,10 @@
 
 ---
 
-## 3. Confidence-Adaptive Noise (노이즈 삽입 방어)
+## 3. Confidence-Adaptive Noise
 
-Membership inference 공격은 **모델의 예측 확신(confidence)**에 크게 의존합니다.  
-이를 완화하기 위해, **예측 확신이 높을수록 적은 노이즈**, **낮을수록 큰 노이즈**를 출력에 추가하는 방어 기법을 도입합니다.
+Membership inference 공격은 **모델의 예측 확신(confidence)**에 크게 의존함.  
+이를 완화하기 위해, **예측 확신이 높을수록 적은 노이즈**, **낮을수록 큰 노이즈**를 출력에 추가하는 방어 기법을 적용함함.
 
 ### Implementation: `confidence_adaptive_noise`
 
